@@ -1,4 +1,4 @@
-# Šolski IS – podpora šolskemu delu na daljavo
+# Šolski IS 
 
 Projekt pri predmetu RPS – Računalniški produkti in storitve.
 
