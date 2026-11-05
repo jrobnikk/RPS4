@@ -1,0 +1,3 @@
+<h2>Gradiva</h2>
+<% ps.forEach(p=>{ %><h3><%= p.naziv %></h3><% if(!p.gr.length){ %><p>Ni gradiv.</p><% } %>
+<ul><% p.gr.forEach(g=>{ %><li><a href="/datoteka/gradivo/<%= g.id %>"><%= g.naslov %></a></li><% }) %></ul><% }) %>

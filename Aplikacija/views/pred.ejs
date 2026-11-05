@@ -1,0 +1,3 @@
+<form method="post"><% if(uid){ %><input type="hidden" name="u" value="<%= uid %>"><% } %>
+<% pr.forEach(p=>{ %><label class="c"><input type="checkbox" name="p" value="<%= p.id %>" <%= mine.includes(p.id)?'checked':'' %>> <%= p.naziv %></label><% }) %>
+<button>Shrani</button></form>

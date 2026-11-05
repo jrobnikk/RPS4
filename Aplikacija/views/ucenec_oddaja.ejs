@@ -1,0 +1,7 @@
+<h2>Oddaja nalog</h2>
+<% if(potrdi){ %><div class="err"><p>Naloga »<%= potrdi.naslov %>« je že oddana. Želite povoziti prejšnjo datoteko?</p>
+<form method="post" action="/ucenec/oddaja/potrdi"><button name="da" value="1">Da, povozi</button> <button name="da" value="0">Ne</button></form></div><% } %>
+<form method="post" enctype="multipart/form-data" class="f"><select name="p" required><% ps.forEach(x=>{ %><option value="<%= x.id %>"><%= x.naziv %></option><% }) %></select>
+<input name="naslov" placeholder="Naslov naloge" required><input type="file" name="datoteka" required><button>Oddaj</button></form>
+<h3>Moje oddaje</h3><div class="w"><table><tr><th>Predmet</th><th>Naloga</th><th>Datoteka</th><th>Datum</th></tr>
+<% od.forEach(o=>{ %><tr><td><%= o.naziv %></td><td><%= o.naslov_naloge %></td><td><%= o.pot_datoteke %></td><td><%= new Date(o.datum_oddaje).toLocaleString('sl') %></td></tr><% }) %></table></div>

@@ -1,0 +1,18 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Šolski IS</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f4f6f8;color:#222}
+nav{background:#1f3a5f;color:#fff;padding:.6rem 1rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+nav a{color:#fff;text-decoration:none}nav .r{margin-left:auto}
+main{max-width:960px;margin:1rem auto;padding:0 1rem}
+.f{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0}.f.v{flex-direction:column;max-width:320px}
+input,select,button{padding:.5rem;font:inherit}button{cursor:pointer}
+.w{overflow-x:auto}table{border-collapse:collapse;width:100%;background:#fff}
+th,td{padding:.5rem;border-bottom:1px solid #ddd;text-align:left}td form{display:inline}
+.err{background:#fff3cd;padding:.6rem;border-radius:4px}.c{display:block;padding:.2rem 0}
+</style></head><body>
+<nav><b>Šolski IS</b>
+<% const M={admin:[['/admin/predmeti','Predmeti'],['/admin/ucitelji','Učitelji'],['/admin/ucenci','Učenci'],['/admin/dodelitve','Dodelitve']],
+ucitelj:[['/ucitelj/gradiva','Gradiva'],['/ucitelj/oddaje','Oddane naloge']],
+ucenec:[['/ucenec/profil','Profil'],['/ucenec/predmeti','Moji predmeti'],['/ucenec/gradiva','Gradiva'],['/ucenec/oddaja','Oddaja nalog']]};
+if(u){ M[u.vloga].forEach(l=>{ %><a href="<%= l[0] %>"><%= l[1] %></a><% }) %><span class="r"><%= u.ime %> <%= u.priimek %> · <a href="/odjava">Odjava</a></span><% } %>
+</nav><main><% if(msg){ %><p class="err"><%= msg %></p><% } %><%- h %></main></body></html>

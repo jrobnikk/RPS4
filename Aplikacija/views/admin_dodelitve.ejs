@@ -1,0 +1,4 @@
+<h2>Dodelitve predmetov</h2>
+<form><select name="u" onchange="this.form.submit()"><option value="">– izberite učitelja ali učenca –</option>
+<% us.forEach(x=>{ %><option value="<%= x.id %>" <%= sel&&sel.id==x.id?'selected':'' %>><%= x.vloga %>: <%= x.priimek %> <%= x.ime %></option><% }) %></select></form>
+<% if(sel){ %><%- include('pred',{pr,mine,uid:sel.id}) %><% } %>

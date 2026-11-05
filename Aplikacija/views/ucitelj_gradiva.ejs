@@ -1,0 +1,8 @@
+<h2>Gradiva</h2>
+<% if(!p){ %><p>Ne poučujete nobenega predmeta.</p><% } else { %>
+<form><select name="p" onchange="this.form.submit()"><% ps.forEach(x=>{ %><option value="<%= x.id %>" <%= x.id==p.id?'selected':'' %>><%= x.naziv %></option><% }) %></select></form>
+<div class="w"><table><tr><th>Naslov</th><th>Naloženo</th><th></th></tr>
+<% gr.forEach(g=>{ %><tr><td><a href="/datoteka/gradivo/<%= g.id %>"><%= g.naslov %></a></td><td><%= new Date(g.datum_nalozitve).toLocaleDateString('sl') %></td>
+<td><form method="post" action="/ucitelj/gradiva/<%= g.id %>/brisi" onsubmit="return confirm('Izbrišem?')"><button>Izbriši</button></form></td></tr><% }) %></table></div>
+<form method="post" enctype="multipart/form-data" class="f"><input type="hidden" name="p" value="<%= p.id %>"><input name="naslov" placeholder="Naslov gradiva" required><input type="file" name="datoteka" required><button>Naloži</button></form>
+<% } %>
