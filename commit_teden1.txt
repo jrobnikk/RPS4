@@ -1,0 +1,4 @@
+Teden 1: specifikacija sistema in ER diagram
+
+- vloge in pravice za administratorja, učitelja in učenca
+- ER diagram (predmet, ucitelj, ucenec, gradivo, oddaja + vezni tabeli)
