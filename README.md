@@ -32,7 +32,7 @@ cp .env.example .env              # vpišite gesla
 ./skripte/certifikat-samopodpisan.sh
 docker compose up -d --build
 ```
-Nato odprite https://localhost (sprejmite opozorilo za samopodpisano potrdilo). Javna domena in Let's Encrypt: glej [tehnično dokumentacijo](docs/tehnicna-dokumentacija.md).
+ Javna domena in Let's Encrypt: glej [tehnično dokumentacijo](docs/tehnicna-dokumentacija.md).
 
 ## Dokumentacija
 - [Specifikacija](docs/specifikacija.md), [ER diagram](docs/er-diagram.md), [Skice](docs/wireframes.md)
