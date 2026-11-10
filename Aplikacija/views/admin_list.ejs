@@ -1,9 +1,0 @@
-<h2><%= t[0].toUpperCase()+t.slice(1) %></h2>
-<form method="post" class="f"><input type="hidden" name="id" value="<%= ed?ed.id:'' %>">
-<% e.f.forEach((k,i)=>{ %><input name="<%= k %>" placeholder="<%= e.h[i] %>" value="<%= ed?ed[k]:'' %>" <%= k==='opis'?'':'required' %>><% }) %>
-<% if(e.v){ %><input name="geslo" type="password" placeholder="Geslo<%= ed?' (prazno = ne spremeni)':'' %>" <%= ed?'':'required' %>><% } %>
-<button><%= ed?'Shrani':'+ Dodaj' %></button><% if(ed){ %><a href="/admin/<%= t %>">Prekliči</a><% } %></form>
-<p><%= rows.length %> zapisov</p>
-<div class="w"><table><tr><% e.h.forEach(h=>{ %><th><%= h %></th><% }) %><th></th></tr>
-<% rows.forEach(r=>{ %><tr><% e.f.forEach(k=>{ %><td><%= r[k] %></td><% }) %><td><a href="?uredi=<%= r.id %>">Uredi</a>
-<form method="post" action="/admin/<%= t %>/<%= r.id %>/brisi" onsubmit="return confirm('Izbrišem?')"><button>Izbriši</button></form></td></tr><% }) %></table></div>

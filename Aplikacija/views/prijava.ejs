@@ -1,5 +1,0 @@
-<h2><%= reg?'Registracija (učenec)':'Prijava' %></h2>
-<form method="post" class="f v"><% if(reg){ %><input name="ime" placeholder="Ime" required><input name="priimek" placeholder="Priimek" required><% } %>
-<input name="email" type="email" placeholder="E-pošta" required><input name="geslo" type="password" placeholder="Geslo" <%= reg?'minlength=8':'' %> required>
-<button><%= reg?'Registriraj':'Prijava' %></button></form>
-<p><a href="<%= reg?'/prijava':'/registracija' %>"><%= reg?'Že imate račun? Prijava':'Nov učenec? Registracija' %></a></p>

@@ -1,6 +1,0 @@
-<h2>Oddane naloge</h2>
-<% if(!p){ %><p>Ne poučujete nobenega predmeta.</p><% } else { %>
-<form><select name="p" onchange="this.form.submit()"><% ps.forEach(x=>{ %><option value="<%= x.id %>" <%= x.id==p.id?'selected':'' %>><%= x.naziv %></option><% }) %></select></form>
-<div class="w"><table><tr><th>Učenec</th><th>Naloga</th><th>Datum</th><th></th></tr>
-<% od.forEach(o=>{ %><tr><td><%= o.priimek %> <%= o.ime %></td><td><%= o.naslov_naloge %></td><td><%= new Date(o.datum_oddaje).toLocaleString('sl') %></td><td><a href="/datoteka/oddaja/<%= o.id %>">Prenesi</a></td></tr><% }) %></table></div>
-<% if(!od.length){ %><p>Ni oddanih nalog.</p><% } } %>
